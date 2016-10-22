@@ -10,14 +10,14 @@ public class ClickableObjects {
 		System.out.println("Displaying the application.");
 	}
 	
-	public static File openFile(){
+	public static String openFile(){
 		JFileChooser fileChooser = new JFileChooser();
-		File fileSelectedOnClick = null;
+		String fileSelectedOnClick = "";
 		int returnValue = fileChooser.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
           File selectedFile = fileChooser.getSelectedFile();
-          fileSelectedOnClick =  selectedFile;
-          System.out.println(fileSelectedOnClick.getName());
+          fileSelectedOnClick =  selectedFile.getAbsolutePath();
+          System.out.println(selectedFile.getName());
         }
         return fileSelectedOnClick;
 	}
